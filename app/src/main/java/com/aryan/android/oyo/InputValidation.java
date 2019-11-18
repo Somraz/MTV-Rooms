@@ -1,4 +1,4 @@
-package com.androidtutorialshub.letzgoapp.helpers;
+package com.aryan.android.oyo;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.support.design.widget.TextInputLayout;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+
 public class InputValidation {
     private Context context;
     public InputValidation(Context context) {
@@ -15,11 +16,11 @@ public class InputValidation {
     public boolean isInputEditTextFilled(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message) {
         String value = textInputEditText.getText().toString().trim();
         if (value.isEmpty()) {
-            textInputLayout.setError(message);
+            //textInputLayout.setError(message);
             hideKeyboardFrom(textInputEditText);
             return false;
         } else {
-            textInputLayout.setErrorEnabled(false);
+            //textInputLayout.setErrorEnabled(false);
         }
 
         return true;
@@ -27,11 +28,11 @@ public class InputValidation {
     public boolean isInputEditTextEmail(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message) {
         String value = textInputEditText.getText().toString().trim();
         if (value.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(value).matches()) {
-            textInputLayout.setError(message);
+            //textInputLayout.setError(message);
             hideKeyboardFrom(textInputEditText);
             return false;
         } else {
-            textInputLayout.setErrorEnabled(false);
+            //textInputLayout.setErrorEnabled(false);
         }
         return true;
     }

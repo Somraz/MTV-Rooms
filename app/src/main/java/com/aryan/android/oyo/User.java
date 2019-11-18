@@ -1,4 +1,4 @@
-package com.androidtutorialshub.letzgoapp.model;
+package com.aryan.android.oyo;
 
 /**
  * Created by lalit on 9/12/2016.

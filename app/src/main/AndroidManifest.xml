@@ -36,6 +36,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/FirstRumTheme" />
         <activity
+            android:name=".FirstRunBusiness"
+            android:label=" "
+            android:parentActivityName=".FirstRunSecondActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FirstRumTheme" />
+        <activity
+            android:name=".BusinessActivity"
+            android:label=" "
+            android:parentActivityName=".FirstRunBusiness"
+            android:screenOrientation="portrait"
+            android:theme="@style/FirstRumTheme" />
+        <activity
             android:name=".FirstRunThirdActivity"
             android:label=" "
             android:parentActivityName=".FirstRunSecondActivity"

@@ -1,7 +1,10 @@
 package com.aryan.android.oyo;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -22,6 +25,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.w3c.dom.Text;
+
+import static android.content.ContentValues.TAG;
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,6 +72,24 @@ public class YouFragment extends Fragment {
                 startActivity(intent1);
             }
         });
+        TextView logout=(TextView) view.findViewById(R.id.logout1);
+        logout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getActivity(),FirstRunSecondActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                getContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                        .putBoolean("isFirstRun", true).commit();
+                getActivity().finish();
+
+
+
+            }
+        });
+
+
         TextView btn=(TextView) view.findViewById(R.id.chat);
         btn.setOnClickListener(new View.OnClickListener() {
 
@@ -116,5 +140,6 @@ public class YouFragment extends Fragment {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 
 }
